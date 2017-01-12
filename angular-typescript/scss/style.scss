@@ -1,14 +1,19 @@
 /**
- * Stylesheet for application
+ * This project follows the 7-1 pattern, to a certain extent,
+ * which can be found at https://sass-guidelin.es/#the-7-1-pattern
  */
 
-@import 'variables';
 
-// include third party packages
-$icon-font-path: "~node_modules/bootstrap-sass/assets/fonts/bootstrap/";
-@import '~node_modules/bootstrap-sass/assets/stylesheets/bootstrap';
+@import "variables";
 
-html, body, * { width: 100%; height: 100%; }
+@import "vendors/module";
 
-// components
-@import 'components/module';
+@import "utils/module";
+
+@import "base/module";
+
+@import "layout/module";
+
+@import "pages/module";
+
+@import "components/module";
