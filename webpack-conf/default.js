@@ -71,10 +71,6 @@ module.exports = {
                 loader: 'file?name=./assets/fonts/[name].[ext]'
             },
             {
-                test: /\.(jpe?g|png|gif|svg|ico)$/i,
-                loader: 'file?name=./assets/[name].[ext]'
-            },
-            {
                 test: /\.html$/,
                 loader: 'html'
             }

@@ -14,11 +14,21 @@ module.exports = {
 		priority: 'MIDDLEWARE',
 		fn: function (next) {
 			let publicFolders = this.config.publicFolders || [];
-			for (let i = 0, l = publicFolders.length; i < l; ++i) {
-				let dir = publicFolders[i];
-				debug(`adding dir ${dir} as express.static`);
-				this.app.use(express.static(dir));
-			}
+			publicFolders.forEach((publicFolderConfiguration) => {
+				let confType = Object.prototype.toString.call(publicFolderConfiguration);
+				switch(confType) {
+					case '[object Array]':
+						let [dirPath, path] = publicFolderConfiguration;
+						debug(`adding dir ${dirPath} as express.static @${path}`);
+						this.app.use(`/${path}`, express.static(dirPath));
+					break;
+					default:
+						let dir = publicFolderConfiguration;
+						debug(`adding dir ${dir} as express.static`);
+						this.app.use(express.static(dir));
+					break;
+				}
+			});
 
 			next();
 		}
