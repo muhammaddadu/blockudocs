@@ -24,6 +24,7 @@ module.exports = {
     entry: {
         shared: './angular-typescript/shared.ts',
         home: './angular-typescript/home.ts',
+        app: './angular-typescript/app.ts',
         vendors: [
             'angular',
             'jquery'
@@ -57,7 +58,13 @@ module.exports = {
             },
             {
                 test: /\.scss$/,
+                include: './angular-typescript/scss',
                 loader: $.extractText.extract('style', 'css!sass')
+            },
+            { 
+                test: /\.scss$/,
+                exclude: './angular-typescript/scss',
+                loader: 'raw!css!sass'
             },
             {
                 test: /\.(ttf|eot|svg|woff2?)(\?v=[a-z0-9=\.]+)?$/i,
@@ -65,14 +72,11 @@ module.exports = {
             },
             {
                 test: /\.(jpe?g|png|gif|svg|ico)$/i,
-                loaders: [
-                    'file?name=./img/[sha512:hash:base64:7].[ext]',
-                    'image-webpack?progressive=true&optimizationLevel=7&interlaced=true'
-                ]
+                loader: 'file?name=./assets/[name].[ext]'
             },
             {
                 test: /\.html$/,
-                loader: "html"
+                loader: 'html'
             }
         ]
     },

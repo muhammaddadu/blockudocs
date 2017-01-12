@@ -59,6 +59,7 @@
     "load-grunt-tasks": "^3.5.0",
     "mocha": "^2.5.3",
     "node-sass": "^3.11.2",
+    "raw-loader": "^0.5.1",
     "reflect-metadata": "^0.1.8",
     "rxjs": "^5.0.0-rc.2",
     "sass-loader": "^4.0.2",

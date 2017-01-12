@@ -8,11 +8,11 @@ import { Component, OnInit } from 'angular2/core';
 
 @Component({
 	moduleId: module.id,
-	selector: 'clout-upload',
-	template: require('./upload.component.html'),
-	styles: [ require('./upload.component.scss') ]
+	selector: 'page-app',
+	template: require('./app.component.html'),
+	styles: [ require('./app.component.scss') ]
 })
-export class UploadComponent implements OnInit {
+export class PageAppComponent implements OnInit {
 	constructor() {
 
 	}
