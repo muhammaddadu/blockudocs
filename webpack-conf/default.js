@@ -64,7 +64,7 @@ module.exports = {
             { 
                 test: /\.scss$/,
                 exclude: './angular-typescript/scss',
-                loader: 'raw!css!sass'
+                loader: 'raw!css!postcss!sass'
             },
             {
                 test: /\.(ttf|eot|svg|woff2?)(\?v=[a-z0-9=\.]+)?$/i,
