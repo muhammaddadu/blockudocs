@@ -3,6 +3,8 @@
  */
 'use strict';
 
+const Config = require('clout-js/lib/Config');
+const _ = require('lodash');
 const path = require('path');
 const webpack = require('webpack');
 const $ = require('webpack-load-plugins')();
@@ -12,7 +14,9 @@ const autoprefixer = require('autoprefixer');
 // ----------------------------------------------------------------------------
 
 const manifest = require('../package.json');
-const env = process.env.NODE_ENV || 'development';
+let config = new Config();
+
+config.loadFromDir(path.resolve(__dirname, '../backend/conf'));
 
 // ----------------------------------------------------------------------------
 
@@ -79,13 +83,14 @@ module.exports = {
 
     plugins: [
         new webpack.DefinePlugin({
-            'NODE_ENV':  JSON.stringify(env),
-            'manifest': JSON.stringify(manifest)
+            'NODE_ENV':  JSON.stringify(config.env),
+            'manifest': JSON.stringify(manifest),
+            'web3': JSON.stringify(config.web3)
         }),
 
         new ConfigPlugin({
             dir: 'angular-typescript/config',
-            environment: env
+            environment: config.env
         }),
 
         new webpack.ProvidePlugin({

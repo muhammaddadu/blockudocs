@@ -4,12 +4,20 @@
 ### Prerequisites
 Checkout the documentation for [grunt-contrib-sass](https://github.com/gruntjs/grunt-contrib-sass) as it explains the prerequisites required to use the module.
 
+Ensure geth is installed.
+
 Then, install the modules for this project.
 ```
 npm install
 ```
 
 ### Usage
+start geth with rpc.
+```
+geth --rpc --rpccorsdomain "http://localhost:3000"
+```
+
+### API server and application
 You can start a live-instance of your project with the following command. It will run on port ```8080```. This can be changed using enviromental variables.
 
 ```

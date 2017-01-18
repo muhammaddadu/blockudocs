@@ -3,5 +3,8 @@
 
 import { bootstrap } from 'angular2/platform/browser';
 import { PageAppComponent } from './pages/app/app.component.ts';
+import web3 from '../node_modules/web3/dist/web3.js';
+
+console.log(web3);
 
 bootstrap(PageAppComponent);
