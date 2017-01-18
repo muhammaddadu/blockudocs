@@ -51,6 +51,12 @@ module.exports = {
     },
 
     module: {
+        preLoaders: [
+            {
+                test: /\.json$/,
+                loader: 'json'
+            }
+        ],
         loaders: [
             {
                 test: /\.ts$/,
@@ -85,7 +91,7 @@ module.exports = {
         new webpack.DefinePlugin({
             'NODE_ENV':  JSON.stringify(config.env),
             'manifest': JSON.stringify(manifest),
-            'web3': JSON.stringify(config.web3)
+            'WEB3_CONF': JSON.stringify(config.web3)
         }),
 
         new ConfigPlugin({

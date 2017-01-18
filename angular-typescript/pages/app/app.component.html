@@ -1,37 +1,35 @@
-<nav class="navbar navbar-toggleable-md navbar-inverse fixed-top bg-inverse">
-	<button
-		class="navbar-toggler navbar-toggler-right"
-		type="button"
-		data-toggle="collapse"
-		data-target="#navbarCollapse"
-		aria-controls="navbarCollapse"
-		aria-expanded="false"
-		aria-label="Toggle navigation">
-		<span class="navbar-toggler-icon"></span>
-	</button>
-	<a class="navbar-brand" href="#">Blockudocs</a>
-	<div id="navbarCollapse"
-		 class="collapse navbar-collapse">
-		<ul class="navbar-nav mr-auto">
-			<li class="nav-item active">
-				<a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-			</li>
-			<li class="nav-item">
-				<a class="nav-link" href="#">Link</a>
-			</li>
-			<li class="nav-item">
-				<a class="nav-link disabled" href="#">Disabled</a>
-			</li>
-		</ul>
-	</div>
-</nav>
-
-<div class="container">
-	
+<i>This example shows only part of namereg functionalities. Namereg contract is available <a href="https://github.com/ethereum/dapp-bin/blob/master/GlobalRegistrar/contract.sol">here</a>
+</i>
+<h1>Namereg</h1>
+<h3>Search for name</h3>
+<div>
+    <text>Address: </text>
+    <input type="text" id="address" onkeyup='onAddressKeyUp()' />
+    <text>Name: </text>
+    <text id="nameOf"></text>
 </div>
-
-<footer class="footer">
-	<div class="container">
-		<span class="text-muted">Place sticky footer content here.</span>
-	</div>
-</footer>
+<h3>Search for address</h3>
+<div>
+    <text>Name: </text>
+    <input type="text" id="name" onkeyup='onNameKeyUp()' />
+    <text>Address: </text>
+    <text id="addressOf"></text>
+</div>
+<h3>Register name</h3>
+<div>
+    <text>Check if name is available: </text>
+    <input type="text" id="registerOwner" onkeyup='onRegisterOwnerKeyUp()' />
+    <text id='nameAvailability'></text>
+</div>
+<div>
+    <button id="registerOwnerButton" type="button" ng-click="ctrl.registerOwner()">Register!</button>
+</div>
+<h3></h3>
+<i>If you own the name, you can  also change the address it points to</i>
+<div>
+    <text>Address: </text>
+    <input type="text" id="newAddress" />
+    <button id="changeAddress" type="button" ng-click="ctrl.changeAddress()">Change address!</button>
+    <text>Current address :</text>
+    <text id="currentAddress"></text>
+</div>
