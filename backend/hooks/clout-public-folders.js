@@ -11,7 +11,7 @@ const
 module.exports = {
 	parse: {
 		event: 'start',
-		priority: 'MIDDLEWARE',
+		priority: 0,
 		fn: function (next) {
 			let publicFolders = this.config.publicFolders || [];
 			publicFolders.forEach((publicFolderConfiguration) => {

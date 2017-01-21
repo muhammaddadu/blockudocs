@@ -9,10 +9,12 @@ module.exports = {
 			let web3 = req.web3;
 			let coinbase = web3.eth.coinbase;
 			let balance = web3.eth.getBalance(coinbase);
+			let TestModel = req.models.Test;
 
 			resp.ok({
 				web3: {
-					eth: { coinbase, balance }
+					eth: { coinbase, balance },
+					isConnected: TestModel.isConnected() ? 'yes' : 'no'
 				}
 			});
 		}

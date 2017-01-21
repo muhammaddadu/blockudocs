@@ -21,9 +21,10 @@ module.exports = {
 				return next();
 			}
 
-			let web3 = new Web3();
-			web3.setProvider(this.config.web3.provider);
-			this.app.request.web3 = web3;
+			!this.module && (this.module = {});
+			this.module.web3 = new Web3();
+			this.module.web3.setProvider(this.config.web3.provider);
+			this.app.request.web3 = this.module.web3;
 			debug('web3 has been initialized');
 			next();
 		}

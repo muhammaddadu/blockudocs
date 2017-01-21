@@ -12,9 +12,15 @@ npm install
 ```
 
 ### Usage
-start geth with rpc.
+ - add server initializing script for blockchain (CI)
+ - https://ipfs.io/docs/getting-started/
+
+### Other Dependencies
 ```
-geth --rpc --rpccorsdomain "http://localhost:3000"
+brew upgrade
+brew tap ethereum/ethereum
+brew install cpp-ethereum
+brew linkapps cpp-ethereum
 ```
 
 ### API server and application
